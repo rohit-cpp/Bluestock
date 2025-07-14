@@ -1,18 +1,19 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
-import { Button } from "@/components/ui/button";
+import { Routes, Route } from "react-router-dom";
 import Header from "./components/shared/header";
 import Footer from "./components/shared/footer";
-function App() {
-  const [count, setCount] = useState(0);
+import UpcomingIPOPage from "./pages/UpcomingIPOPage/IPOList";
+import IpoDetail from "./pages/UpcomingIPOPage/IpoDetail";
 
+function App() {
   return (
-    <div>
+    <>
       <Header />
+      <Routes>
+        <Route path="/" element={<UpcomingIPOPage />} />
+        <Route path="/ipo-detail" element={<IpoDetail />} />
+      </Routes>
       <Footer />
-    </div>
+    </>
   );
 }
 
